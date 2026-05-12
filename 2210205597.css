@@ -1,0 +1,513 @@
+/* ============================================
+   ABDRAHAMENE ABDOULAYE — RESUME CSS
+   ============================================ */
+
+/* --- Google Fonts --- */
+/* Loaded from HTML head */
+
+/* --- CSS Variables (light theme default) --- */
+:root {
+  --bg-page:      #eef0f5;
+  --bg-sidebar:   #1a2744;
+  --bg-main:      #ffffff;
+  --bg-card:      #f4f6fb;
+  --accent:       #2a65e8;
+  --accent-dark:  #1a4dbf;
+  --text-main:    #1c1f2e;
+  --text-muted:   #5a607a;
+  --text-sidebar: #ccd6f6;
+  --text-sidebar-head: #ffffff;
+  --bar-bg:       #dde3f0;
+  --divider:      rgba(255,255,255,0.12);
+  --shadow:       0 4px 24px rgba(0,0,0,0.08);
+  --proj-border:  #dde3f0;
+  --badge-green-bg:  #d4f4e5; --badge-green-txt: #1a7a4a;
+  --badge-blue-bg:   #dce9ff; --badge-blue-txt:  #1a4dbf;
+  --badge-amber-bg:  #fff3cc; --badge-amber-txt: #8a5e00;
+}
+
+/* --- Dark theme --- */
+[data-theme="dark"] {
+  --bg-page:      #0d1117;
+  --bg-sidebar:   #0a0f1e;
+  --bg-main:      #161b27;
+  --bg-card:      #1e2538;
+  --accent:       #4d8cff;
+  --accent-dark:  #2a65e8;
+  --text-main:    #e8ecf7;
+  --text-muted:   #8892b0;
+  --text-sidebar: #8892b0;
+  --text-sidebar-head: #ccd6f6;
+  --bar-bg:       #2a3352;
+  --divider:      rgba(255,255,255,0.08);
+  --shadow:       0 4px 24px rgba(0,0,0,0.4);
+  --proj-border:  #2a3352;
+  --badge-green-bg:  #0f3320; --badge-green-txt: #4ccc8a;
+  --badge-blue-bg:   #0d1f45; --badge-blue-txt:  #4d8cff;
+  --badge-amber-bg:  #3a2800; --badge-amber-txt: #f5c842;
+}
+
+/* --- Reset & base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* --- Theme toggle button --- */
+.theme-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.15s;
+}
+
+.theme-btn:hover {
+  background: var(--accent-dark);
+  transform: scale(1.05);
+}
+
+/* --- Page layout --- */
+.page {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  min-height: 100vh;
+  max-width: 1050px;
+  margin: 40px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+  background: var(--bg-sidebar);
+  padding: 40px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Photo — fixed to show full face */
+.photo-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(42,101,232,0.2);
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;  /* shows the face / top of photo */
+  display: block;
+}
+
+.sidebar-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-sidebar-head);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 22px 0;
+}
+
+/* Side sections */
+.side-block {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.side-heading {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* Contact list */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  color: var(--text-sidebar);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.ico {
+  flex-shrink: 0;
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+/* Language list */
+.lang-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.lang-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: var(--text-sidebar);
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 2px 9px;
+}
+
+.badge.green { background: var(--badge-green-bg); color: var(--badge-green-txt); }
+.badge.blue  { background: var(--badge-blue-bg);  color: var(--badge-blue-txt);  }
+.badge.amber { background: var(--badge-amber-bg); color: var(--badge-amber-txt); }
+
+/* Pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.pill {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-sidebar);
+  border: 1px solid var(--divider);
+  border-radius: 20px;
+  padding: 4px 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pill:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main {
+  background: var(--bg-main);
+  padding: 44px 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* Section */
+.section {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+}
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.sec-title::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+/* About */
+.about-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ============================================
+   SKILL BARS
+   ============================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+}
+
+.skill-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.bar-track {
+  height: 7px;
+  background: var(--bar-bg);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* CSS-only animated bar — uses a custom property --w set inline */
+.bar-fill {
+  height: 100%;
+  width: 0;                /* starts at 0 */
+  background: linear-gradient(90deg, var(--accent), #7ba8ff);
+  border-radius: 10px;
+  animation: growBar 1.4s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes growBar {
+  to { width: var(--w); }
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.tl-item {
+  display: flex;
+  gap: 14px;
+  position: relative;
+}
+
+.tl-dot {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 5px;
+  box-shadow: 0 0 0 3px rgba(42,101,232,0.2);
+}
+
+.tl-body {
+  flex: 1;
+}
+
+.tl-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+
+.tl-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.tl-date {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.tl-company {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.tl-list {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tl-list li {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
+.projects-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.proj-card {
+  background: var(--bg-card);
+  border: 1px solid var(--proj-border);
+  border-radius: 12px;
+  padding: 18px 14px;
+  transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+  cursor: default;
+}
+
+.proj-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(42,101,232,0.12);
+}
+
+.proj-icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.proj-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.proj-tech {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+
+.proj-desc {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   DECORATIVE — makes it look less plain
+   ============================================ */
+
+/* Subtle dot pattern on the page background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--bar-bg) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+/* Coloured accent stripe on top of page */
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #7ba8ff, var(--accent));
+  z-index: 10;
+}
+
+/* ============================================
+   RESPONSIVE — mobile
+   ============================================ */
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: 1fr;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .main {
+    padding: 28px 20px 36px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tl-top {
+    flex-direction: column;
+  }
+
+  .theme-btn {
+    top: 10px;
+    right: 10px;
+  }
+}
